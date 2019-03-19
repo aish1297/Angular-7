@@ -1,0 +1,75 @@
+<!--
+<div>
+    <mat-icon>add_circle</mat-icon>
+  <span><button class="add-button" (click)="onAddSelect()">Add New Flavour</button></span>
+  <span><button class="button-delete" (click)="onDeleteAllSelect()" >Delete All</button></span>
+</div>
+<div>
+  <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>Flavour ID</th>
+            <th>Flavour Name</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let icecream of icecreams">
+            <td><input type="checkbox"></td>
+            <td>{{icecream.flavour_id}}</td>
+            <td>{{icecream.flavour_name}}</td>
+            <td>{{icecream.price}}</td>
+            <td><button id="updateId" (click)="onUpdateSelect()">Update</button></td>
+            <td><button id="deleteId" (click)="onDeleteSelect()">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+ -->
+<form> <mat-icon class="add-button"
+           (click)="openDialog()">add</mat-icon>
+
+ <table mat-table [dataSource]="icecreams" class="mat-elevation-z8">
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox>
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox>
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+    <ng-container matColumnDef="flavour_id">
+      <th mat-header-cell *matHeaderCellDef > Flavour ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.flavour_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="flavour_name">
+      <th mat-header-cell *matHeaderCellDef> Flavour Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.flavour_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+        <td mat-cell (click)="openEditDialog(i)" *matCellDef="let element; let i=index"><mat-icon class="edit-button">edit</mat-icon></td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell  (click)="openDeleteDialog(i)" *matCellDef="let element; let i=index"><mat-icon class="delete-button">delete</mat-icon></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</form>

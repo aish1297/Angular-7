@@ -1,0 +1,23 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.edit-button {
+  cursor: pointer;
+}
+
+.delete-button {
+  cursor: pointer;
+}
+
+.add-button {
+  cursor: pointer;
+}

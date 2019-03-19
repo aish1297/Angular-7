@@ -1,0 +1,37 @@
+<header>
+  <mat-toolbar color="primary">
+    <span>Baskin Robbins</span>
+  </mat-toolbar>
+</header>
+<div>
+<!-- <mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Icecreams">
+    <ng-template matTabContent> Icecreams</ng-template>
+  </mat-tab>
+  <mat-tab label="Icecream Cakes">
+    <ng-template matTabContent> Icecream Cakes</ng-template>
+  </mat-tab>
+  <mat-tab label="Signature Cones">
+    <ng-template matTabContent> Signature Cones</ng-template>
+  </mat-tab>
+</mat-tab-group> -->
+
+<nav mat-tab-nav-bar >
+  <a mat-tab-link
+     *ngFor="let routeLink of routeLinks; let i = index;"
+     [routerLink]="routeLink.link"
+     routerLinkActive="mat-tab-link-active"
+     #rla="routerLinkActive"
+     (click)="activeLinkIndex = i"
+     [routerLinkActiveOptions]="{exact: true}"
+  >
+      {{routeLink.label}}
+  </a>
+</nav>
+<router-outlet></router-outlet>
+
+</div>
+
+
+
+<!-- <footer class="footer-container">All Rights Reserved</footer> -->

@@ -1,0 +1,15 @@
+<form >
+  <mat-card-header>
+    <mat-card-title>Delete Flavour</mat-card-title>
+    <p>{{confirmationMessage}}</p>
+  </mat-card-header>
+
+  <mat-card-actions>
+    <button mat-button
+            (click)="onDeleteSelect(i)">Delete</button>
+  </mat-card-actions>
+  <mat-card-actions>
+    <button mat-button
+            (click)="onCancelSelect()">Cancel</button>
+  </mat-card-actions>
+</form>
