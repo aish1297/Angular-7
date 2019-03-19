@@ -1,0 +1,29 @@
+{
+  "icecreams": [
+    {
+       "flavour_id": 1,
+       "flavour_name": "Blackcurrent ",
+       "price": 100
+    },
+    {
+        "flavour_id": 2,
+        "flavour_name": "Strawberry",
+        "price": 120
+    },
+    {
+        "flavour_id": 3,
+        "flavour_name": "Mango",
+        "price": 130
+    },
+    {
+        "flavour_id": 4,
+        "flavour_name": "Cottoncandy",
+        "price": 140
+    },
+    {
+        "flavour_id": 5,
+        "flavour_name": "WildBerry",
+        "price": 150
+    }
+  ]
+}
